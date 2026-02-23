@@ -9,9 +9,9 @@
 
 <br>
 
-<p><img align="right" src="https://github.com/nevcanuludas/nevcanuludas/blob/main/animation_500_kxa883sd.gif" alt="adam-pw" /></p>
+<p><img align="right" src="https://github.com/nevcanuludas/nevcanuludas/blob/main/Coding_boy.gif" alt="Coding_boy" /></p>
 
-- 🔭 I’m currently working on **dotnet_core_temizlik.co**
+- 🔭 I’m currently working on **Dipnot App**
 
 - 🌱 I’m currently learning **flutter**
 
@@ -21,31 +21,31 @@
 
 - 💬 Ask me about **react, vue, .net, .net Core, React Native**
 
-- 📫 How to reach me **nev@gue.com.tr**
+- 📫 How to reach me **nev@dipnot.app**
 
 
 <br>
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-  <a href="https://twitter.com/nevcanuludas" target="blank">
+  <a href="https://x.com/nevcanuludas" target="blank">
     <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="nevcanuludas" height="30" width="40" />
   </a>
-  <a href="https://linkedin.com/in/oguzhan-ali-ferli" target="blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="oguzhan-ali-ferli" height="30" width="40" />
+  <a href="https://linkedin.com/in/nevcanuludas" target="blank">
+    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="nevcanuludas" height="30" width="40" />
   </a>
-  <a href="https://stackoverflow.com/users/17913853" target="blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="17913853" height="30" width="40" />
+  <a href="https://stackoverflow.com/users/7573533" target="blank">
+    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="7573533" height="30" width="40" />
   </a>
-  <a href="https://instagram.com/oguzhanferli" target="blank">
-    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="oguzhanferli" height="30" width="40" />
+  <a href="https://instagram.com/nevcanuludas" target="blank">
+    <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="nevcanuludas" height="30" width="40" />
   </a>
   <a href="https://medium.com/@nevcanuludas" target="blank">
     <img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@nevcanuludas" height="30" width="40" />
   </a>
 </p>
 
-<p align="left"> <a href="https://twitter.com/nevcanuludas" target="blank"><img src="https://img.shields.io/twitter/follow/nevcanuludas?logo=twitter&style=for-the-badge" alt="nevcanuludas" /></a> </p>
+<p align="left"> <a href="https://x.com/nevcanuludas" target="blank"><img src="https://img.shields.io/twitter/follow/nevcanuludas?logo=twitter&style=for-the-badge" alt="nevcanuludas" /></a> </p>
 <br>
 
 <h3 align="left">Languages and Tools:</h3>
@@ -95,7 +95,7 @@
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=nevcanuludas&theme=dark&background=0d1117&date_format=M%20j%5B%2C%20Y%5D" alt="nevcanuludas" /></p>
       
-<p align="left"> <a href="https://twitter.com/" target="blank"><img
+<p align="left"> <a href="https://x.com/" target="blank"><img
       src="https://img.shields.io/twitter/follow/?logo=twitter&style=for-the-badge" alt="" /></a> </p>
 
 [nevcanuludas](https://github.com/nevcanuludas)

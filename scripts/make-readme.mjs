@@ -94,7 +94,7 @@ technology end to end as a one-person engineering team with AI-assisted developm
 Underwater is the other half: I'm the only GUE instructor trainer in Türkiye, and my master's
 thesis at Akdeniz University classifies Mediterranean amphorae with computer vision.
 
-I love open source: my own sites are public at [nevcan-com](https://github.com/nevcan-com).
+I love open source.
 
 ### Technologies & tools
 

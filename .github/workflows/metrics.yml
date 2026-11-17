@@ -1,0 +1,78 @@
+# Daily stats for the profile README, each in a dark and a light version (v6 colours):
+#   metrics/stats.{dark,light}.svg   lowlighter/metrics: activity, repositories, languages,
+#                                    contribution calendar and coding habits, private repos included
+#   metrics/snake.{dark,light}.svg   Platane/snk: the contribution graph eaten by a snake
+# Needs the METRICS_TOKEN secret: a classic token with repo, read:user and read:org.
+name: Metrics
+
+on:
+  schedule:
+    - cron: '0 3 * * *' # 06:00 in Istanbul
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/metrics.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: metrics
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 1 # one commit at a time
+      matrix:
+        include:
+          - theme: dark
+            css: 'svg { color: #8b97a3 } h1, h2, h3 { color: #6ff7e0 } .field svg { fill: #4c5763 }'
+          - theme: light
+            css: 'svg { color: #4c5763 } h1, h2, h3 { color: #0a8a7a } .field svg { fill: #8b97a3 }'
+    steps:
+      - uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6 # v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: nevcanuludas
+          filename: metrics/stats.${{ matrix.theme }}.svg
+          template: classic
+          config_display: large
+          config_timezone: Europe/Istanbul
+          base: header, activity, community, repositories
+          repositories_affiliations: owner, collaborator, organization_member
+          extras_css: ${{ matrix.css }}
+          plugin_languages: yes
+          plugin_languages_sections: most-used
+          plugin_languages_limit: 8
+          plugin_languages_ignored: html, css, scss, shell
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          plugin_habits: yes
+          plugin_habits_charts: yes
+          plugin_habits_facts: yes
+          plugin_habits_days: 30
+          plugin_habits_from: 300
+          committer_message: 'Update stats (${{ matrix.theme }})'
+
+  snake:
+    needs: stats
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: nevcanuludas
+          outputs: |
+            metrics/snake.dark.svg?palette=github-dark&color_snake=#6ff7e0&color_dots=#11161d,#0f3a36,#1b6b62,#3fb3a2,#6ff7e0
+            metrics/snake.light.svg?color_snake=#0a8a7a&color_dots=#eef2f5,#b8ece4,#6fd9c8,#2fb8a6,#0a8a7a
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add metrics/snake.*.svg
+          git diff --cached --quiet && exit 0
+          git commit -m 'Update snake'
+          git pull --rebase
+          git push

@@ -82,6 +82,17 @@ const stackRows = stack
   )
   .join('\n');
 
+// "I ♥ OPEN SOURCE": shields can't put a coloured logo between two words, so this one badge is
+// drawn here in shields' for-the-badge style (same height, font and letter widths) and saved to
+// badges/open-source.{dark,light}.svg
+const HEART =
+  'M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2.1-.2 3.9.9 5.6 2.9 1.7-2 3.5-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z';
+const openSourceBadge = (t, text) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" width="147.75" height="28" role="img" aria-label="I love open source"><title>I love open source</title><g shape-rendering="crispEdges"><rect width="147.75" height="28" fill="#${t.bg}"/></g><g fill="${text}" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="100" font-weight="bold"><text transform="scale(.1)" x="152.5" y="175" textLength="55">I</text><text transform="scale(.1)" x="888.75" y="175" textLength="937.5">OPEN SOURCE</text></g><svg x="23" y="7" width="14" height="14" viewBox="0 0 24 24"><path d="${HEART}" fill="#${t.accent}"/></svg></svg>`;
+fs.mkdirSync(new URL('../badges/', import.meta.url), { recursive: true });
+fs.writeFileSync(new URL('../badges/open-source.dark.svg', import.meta.url), openSourceBadge(THEMES.dark, '#fff'));
+fs.writeFileSync(new URL('../badges/open-source.light.svg', import.meta.url), openSourceBadge(THEMES.light, '#333'));
+
 // stats images are made by .github/workflows/metrics.yml, one per theme
 const themed = (base, alt) =>
   `<picture><source media="(prefers-color-scheme: dark)" srcset="${base}.dark.svg"><img alt="${alt}" src="${base}.light.svg" width="100%"></picture>`;
@@ -102,7 +113,9 @@ technology end to end as a one-person engineering team with AI-assisted developm
 Underwater is the other half: I'm the only GUE instructor trainer in Türkiye, and my master's
 thesis at Akdeniz University classifies Mediterranean amphorae with computer vision.
 
-<p align="center">I ❤️ open source</p>
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./badges/open-source.dark.svg"><img alt="I love open source" src="./badges/open-source.light.svg"></picture>
+</p>
 
 <p align="center">
   ${themed('./metrics/snake', 'A snake eating the contribution graph of the last year')}

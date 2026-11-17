@@ -18,7 +18,9 @@ technology end to end as a one-person engineering team with AI-assisted developm
 Underwater is the other half: I'm the only GUE instructor trainer in Türkiye, and my master's
 thesis at Akdeniz University classifies Mediterranean amphorae with computer vision.
 
-<p align="center">I ❤️ open source</p>
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./badges/open-source.dark.svg"><img alt="I love open source" src="./badges/open-source.light.svg"></picture>
+</p>
 
 <p align="center">
   <picture><source media="(prefers-color-scheme: dark)" srcset="./metrics/snake.dark.svg"><img alt="A snake eating the contribution graph of the last year" src="./metrics/snake.light.svg" width="100%"></picture>

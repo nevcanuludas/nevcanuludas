@@ -10,6 +10,7 @@ Both are generated. Change the script, then run it again:
 | File                     | Made by                                         | Source                                                      |
 | ------------------------ | ----------------------------------------------- | ----------------------------------------------------------- |
 | `README.md`              | `node scripts/make-readme.mjs --check`          | links, stack and text inside the script                     |
+| `badges/*.svg`           | `node scripts/make-readme.mjs`                  | the open-source badge, drawn in shields' style            |
 | `header.svg`             | `scripts/dump-rgba.swift` + `make-header.mjs`   | `../v6.nevcan.com/public/media/nev-points.png` (see script) |
 | `metrics/stats.*.svg`    | `scripts/make-stats.mjs`, run daily by the workflow | GitHub API (needs the `METRICS_TOKEN` secret)           |
 | `metrics/snake.*.svg`    | Platane/snk in the same workflow                | public contribution graph                                   |

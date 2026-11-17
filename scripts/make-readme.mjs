@@ -49,7 +49,6 @@ const links = [
   ['dev.nevcan.com', LOGO_N, 'https://dev.nevcan.com'],
   ['dive.nevcan.com', LOGO_N, 'https://dive.nevcan.com'],
   ['LinkedIn', LOGO_IN, 'https://www.linkedin.com/in/nevcanuludas'],
-  ['ORCID', 'orcid', 'https://orcid.org/0009-0008-2027-4072'],
   ['hello@nevcan.com', LOGO_MAIL, 'mailto:hello@nevcan.com'],
 ];
 
@@ -94,6 +93,8 @@ technology end to end as a one-person engineering team with AI-assisted developm
 
 Underwater is the other half: I'm the only GUE instructor trainer in Türkiye, and my master's
 thesis at Akdeniz University classifies Mediterranean amphorae with computer vision.
+
+I love open source: my own sites are public at [nevcan-com](https://github.com/nevcan-com).
 
 ### Technologies & tools
 

@@ -71,8 +71,8 @@ const views = (color) =>
 const viewsBadge = `<picture><source media="(prefers-color-scheme: dark)" srcset="${views(THEMES.dark.bg)}"><img alt="Profile views" src="${views(THEMES.light.accent)}"></picture>`;
 
 const linkRow = [
-  ...links.map(([t, logo, href]) => `<a href="${href}">${badge(t, logo, 'for-the-badge')}</a>`),
   viewsBadge,
+  ...links.map(([t, logo, href]) => `<a href="${href}">${badge(t, logo, 'for-the-badge')}</a>`),
 ].join('\n  ');
 
 const stackRows = stack
@@ -102,7 +102,7 @@ technology end to end as a one-person engineering team with AI-assisted developm
 Underwater is the other half: I'm the only GUE instructor trainer in Türkiye, and my master's
 thesis at Akdeniz University classifies Mediterranean amphorae with computer vision.
 
-I love open source.
+<p align="center">I ❤️ open source</p>
 
 <p align="center">
   ${themed('./metrics/snake', 'A snake eating the contribution graph of the last year')}

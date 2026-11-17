@@ -65,34 +65,32 @@ for (let y = new Date(viewer.createdAt).getUTCFullYear(); y <= now.getUTCFullYea
 }
 
 // ---- 3. repositories: languages, and commit times in those touched this year ----
-const repos = [];
-let after = null;
-do {
-  const d = await gql(
-    `query($after: String) { viewer { repositories(first: 100, after: $after, isFork: false,
-      ownerAffiliations: [OWNER, ORGANIZATION_MEMBER, COLLABORATOR]) {
-      pageInfo { hasNextPage endCursor }
-      nodes { nameWithOwner pushedAt
-        languages(first: 12, orderBy: { field: SIZE, direction: DESC }) { edges { size node { name } } } }
-    } } }`,
-    { after },
+// Own and collaborator repositories, then each organisation's own list: the viewer's
+// ORGANIZATION_MEMBER affiliation leaves out some private organisation repositories.
+const REPO_FIELDS = `pageInfo { hasNextPage endCursor }
+  nodes { nameWithOwner pushedAt isFork
+    languages(first: 12, orderBy: { field: SIZE, direction: DESC }) { edges { size node { name } } } }`;
+const repos = new Map();
+async function collect(query, vars, pick) {
+  let after = null;
+  do {
+    const r = pick(await gql(query, { ...vars, after }));
+    for (const n of r.nodes) if (!n.isFork) repos.set(n.nameWithOwner, n);
+    after = r.pageInfo.hasNextPage ? r.pageInfo.endCursor : null;
+  } while (after);
+}
+await collect(
+  `query($after: String) { viewer { repositories(first: 100, after: $after, ownerAffiliations: [OWNER, COLLABORATOR]) { ${REPO_FIELDS} } } }`,
+  {},
+  (d) => d.viewer.repositories,
+);
+const { viewer: v2 } = await gql(`{ viewer { organizations(first: 100) { nodes { login } } } }`);
+for (const { login } of v2.organizations.nodes)
+  await collect(
+    `query($login: String!, $after: String) { organization(login: $login) { repositories(first: 100, after: $after) { ${REPO_FIELDS} } } }`,
+    { login },
+    (d) => d.organization.repositories,
   );
-  const r = d.viewer.repositories;
-  repos.push(...r.nodes);
-  after = r.pageInfo.hasNextPage ? r.pageInfo.endCursor : null;
-} while (after);
-
-// languages of what Nev works on now: repositories pushed in the last two years
-const twoYearsAgo = new Date(now.getTime() - 2 * 365 * DAY);
-const langBytes = new Map();
-for (const r of repos.filter((r) => r.pushedAt && new Date(r.pushedAt) > twoYearsAgo))
-  for (const e of r.languages.edges)
-    if (!IGNORED_LANGUAGES.has(e.node.name)) langBytes.set(e.node.name, (langBytes.get(e.node.name) ?? 0) + e.size);
-const langTotal = [...langBytes.values()].reduce((a, b) => a + b, 0);
-const langs = [...langBytes.entries()].sort((a, b) => b[1] - a[1]);
-const topLangs = langs.slice(0, 6).map(([name, b]) => ({ name, pct: (b / langTotal) * 100 }));
-const otherPct = 100 - topLangs.reduce((a, l) => a + l.pct, 0);
-if (otherPct >= 0.5) topLangs.push({ name: 'Other', pct: otherPct });
 
 const hours = Array(24).fill(0);
 const weekdays = Array(7).fill(0); // Monday first
@@ -100,8 +98,10 @@ const hourFmt = new Intl.DateTimeFormat('en-GB', { timeZone: TZ, hour: 'numeric'
 const dayFmt = new Intl.DateTimeFormat('en-GB', { timeZone: TZ, weekday: 'short' });
 const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 let commitsTimed = 0;
-for (const r of repos.filter((r) => r.pushedAt && new Date(r.pushedAt) > yearAgo)) {
+const commitsByRepo = new Map();
+for (const r of [...repos.values()].filter((r) => r.pushedAt && new Date(r.pushedAt) > yearAgo)) {
   const [owner, name] = r.nameWithOwner.split('/');
+  const before = commitsTimed;
   let cursor = null;
   do {
     const d = await gql(
@@ -121,7 +121,23 @@ for (const r of repos.filter((r) => r.pushedAt && new Date(r.pushedAt) > yearAgo
     }
     cursor = h.pageInfo.hasNextPage ? h.pageInfo.endCursor : null;
   } while (cursor);
+  if (commitsTimed > before) commitsByRepo.set(r, commitsTimed - before);
 }
+
+// languages of what Nev actually wrote this year: each repository's language mix (by size),
+// weighted by his commits there in the last 12 months. Plain sizes would let old static sites with
+// big vendored CSS win.
+const langWeight = new Map();
+for (const [r, commits] of commitsByRepo) {
+  const edges = r.languages.edges.filter((e) => !IGNORED_LANGUAGES.has(e.node.name));
+  const size = edges.reduce((a, e) => a + e.size, 0);
+  for (const e of edges) langWeight.set(e.node.name, (langWeight.get(e.node.name) ?? 0) + (commits * e.size) / size);
+}
+const langTotal = [...langWeight.values()].reduce((a, b) => a + b, 0) || 1;
+const langs = [...langWeight.entries()].sort((a, b) => b[1] - a[1]);
+const topLangs = langs.slice(0, 6).map(([name, w]) => ({ name, pct: (w / langTotal) * 100 }));
+const otherPct = 100 - topLangs.reduce((a, l) => a + l.pct, 0);
+if (otherPct >= 0.5) topLangs.push({ name: 'Other', pct: otherPct });
 
 const peakHour = hours.indexOf(Math.max(...hours));
 const peakDay = ['Mondays', 'Tuesdays', 'Wednesdays', 'Thursdays', 'Fridays', 'Saturdays', 'Sundays'][
@@ -249,5 +265,5 @@ fs.mkdirSync(new URL('../metrics/', import.meta.url), { recursive: true });
 for (const [name, t] of Object.entries(THEMES)) fs.writeFileSync(new URL(`../metrics/stats.${name}.svg`, import.meta.url), svg(t));
 console.log(
   `contributions 12m ${cc.contributionCalendar.totalContributions}, all-time ${allTime}, active days ${activeDays}, best streak ${best}; ` +
-    `${repos.length} repos, ${commitsTimed} commits timed; peak ${peakDay} ${peakHour}:00; top: ${topLangs.map((l) => `${l.name} ${l.pct.toFixed(1)}%`).join(', ')}`,
+    `${repos.size} repos, ${commitsTimed} commits timed; peak ${peakDay} ${peakHour}:00; top: ${topLangs.map((l) => `${l.name} ${l.pct.toFixed(1)}%`).join(', ')}`,
 );

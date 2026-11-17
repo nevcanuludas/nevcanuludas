@@ -64,9 +64,16 @@ const stack = [
   ['Delivery', [['Git', 'git'], ['GitHub Actions', 'githubactions'], ['GitHub Pages', 'githubpages'], ['Vercel', 'vercel']]],
 ];
 
-const linkRow = links
-  .map(([t, logo, href]) => `<a href="${href}">${badge(t, logo, 'for-the-badge')}</a>`)
-  .join('\n  ');
+// profile views: komarev counts every load (keep the username, or the count starts again); its
+// label colour is fixed grey, only the value side takes our colour
+const views = (color) =>
+  `https://komarev.com/ghpvc/?username=nevcanuludas&label=profile%20views&color=${color}&style=for-the-badge`;
+const viewsBadge = `<picture><source media="(prefers-color-scheme: dark)" srcset="${views(THEMES.dark.bg)}"><img alt="Profile views" src="${views(THEMES.light.accent)}"></picture>`;
+
+const linkRow = [
+  ...links.map(([t, logo, href]) => `<a href="${href}">${badge(t, logo, 'for-the-badge')}</a>`),
+  viewsBadge,
+].join('\n  ');
 
 const stackRows = stack
   .map(
@@ -87,14 +94,19 @@ const readme = `<p align="center">
   ${linkRow}
 </p>
 
-I've been building for the web since 2006: e-commerce at D&R, products at Doğuş Teknoloji, enterprise
-software at SabancıDx. Today I'm co-founder & CTPO of [Dipnot](https://dipnot.app), running its
+I've been building for the web since 2006: e-commerce at D&R, products at
+[Doğuş Teknoloji](https://github.com/dogusteknoloji), enterprise software at
+[SabancıDx](https://github.com/sabancidx). Today I'm co-founder & CTPO of [Dipnot](https://dipnot.app), running its
 technology end to end as a one-person engineering team with AI-assisted development.
 
 Underwater is the other half: I'm the only GUE instructor trainer in Türkiye, and my master's
 thesis at Akdeniz University classifies Mediterranean amphorae with computer vision.
 
 I love open source.
+
+<p align="center">
+  ${themed('./metrics/snake', 'A snake eating the contribution graph of the last year')}
+</p>
 
 ### Technologies & tools
 
@@ -105,11 +117,7 @@ ${stackRows}
 ### Stats & habits
 
 <p align="center">
-  ${themed('./metrics/stats', 'GitHub stats: activity, community and repositories, private work included')}
-</p>
-
-<p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=nevcanuludas&label=profile%20views&color=01050a&style=flat-square"><img alt="Profile views" src="https://komarev.com/ghpvc/?username=nevcanuludas&label=profile%20views&color=0a8a7a&style=flat-square"></picture>
+  ${themed('./metrics/stats', 'GitHub stats: contributions, languages and when I code, private work included')}
 </p>
 `;
 

@@ -7,16 +7,22 @@
   <a href="https://dive.nevcan.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/dive.nevcan.com-01050a?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjMxMCAyNTAgMjYwIDI3MCI%2BPHBhdGggZD0iTTM1MCAyODMgNTMzIDQ4NVYyODMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2VlZjJmNSIgc3Ryb2tlLXdpZHRoPSI1NiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8%2BPGNpcmNsZSBjeD0iMzUzIiBjeT0iNDc4IiByPSIzNCIgZmlsbD0iIzZmZjdlMCIvPjwvc3ZnPg%3D%3D&logoColor=6ff7e0"><img alt="dive.nevcan.com" src="https://img.shields.io/badge/dive.nevcan.com-eef2f5?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjMxMCAyNTAgMjYwIDI3MCI%2BPHBhdGggZD0iTTM1MCAyODMgNTMzIDQ4NVYyODMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAxMDUwYSIgc3Ryb2tlLXdpZHRoPSI1NiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8%2BPGNpcmNsZSBjeD0iMzUzIiBjeT0iNDc4IiByPSIzNCIgZmlsbD0iIzBhOGE3YSIvPjwvc3ZnPg%3D%3D&logoColor=0a8a7a"></picture></a>
   <a href="https://www.linkedin.com/in/nevcanuludas"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LinkedIn-01050a?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzZmZjdlMCI%2BPGNpcmNsZSBjeD0iNSIgY3k9IjQuNSIgcj0iMi40Ii8%2BPHJlY3QgeD0iMyIgeT0iOC41IiB3aWR0aD0iNCIgaGVpZ2h0PSIxMi41IiByeD0iLjYiLz48cGF0aCBkPSJNOS41IDguNWgzLjh2MS44Yy44LTEuMyAyLjMtMi4yIDQuMy0yLjIgMy40IDAgNC45IDIuMSA0LjkgNS45VjIxaC00di02LjRjMC0xLjktLjYtMy0yLjEtMy0xLjYgMC0yLjcgMS4yLTIuNyAzLjFWMjFoLTQuMnoiLz48L3N2Zz4%3D&logoColor=6ff7e0"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-eef2f5?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzBhOGE3YSI%2BPGNpcmNsZSBjeD0iNSIgY3k9IjQuNSIgcj0iMi40Ii8%2BPHJlY3QgeD0iMyIgeT0iOC41IiB3aWR0aD0iNCIgaGVpZ2h0PSIxMi41IiByeD0iLjYiLz48cGF0aCBkPSJNOS41IDguNWgzLjh2MS44Yy44LTEuMyAyLjMtMi4yIDQuMy0yLjIgMy40IDAgNC45IDIuMSA0LjkgNS45VjIxaC00di02LjRjMC0xLjktLjYtMy0yLjEtMy0xLjYgMC0yLjcgMS4yLTIuNyAzLjFWMjFoLTQuMnoiLz48L3N2Zz4%3D&logoColor=0a8a7a"></picture></a>
   <a href="mailto:hello@nevcan.com"><picture><source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/hello%40nevcan.com-01050a?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNmZmN2UwIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI%2BPHJlY3QgeD0iMi41IiB5PSI1IiB3aWR0aD0iMTkiIGhlaWdodD0iMTQiIHJ4PSIyLjUiLz48cGF0aCBkPSJtMy41IDYuNSA4LjUgNi41IDguNS02LjUiLz48L3N2Zz4%3D&logoColor=6ff7e0"><img alt="hello@nevcan.com" src="https://img.shields.io/badge/hello%40nevcan.com-eef2f5?style=for-the-badge&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGE4YTdhIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI%2BPHJlY3QgeD0iMi41IiB5PSI1IiB3aWR0aD0iMTkiIGhlaWdodD0iMTQiIHJ4PSIyLjUiLz48cGF0aCBkPSJtMy41IDYuNSA4LjUgNi41IDguNS02LjUiLz48L3N2Zz4%3D&logoColor=0a8a7a"></picture></a>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=nevcanuludas&label=profile%20views&color=01050a&style=for-the-badge"><img alt="Profile views" src="https://komarev.com/ghpvc/?username=nevcanuludas&label=profile%20views&color=0a8a7a&style=for-the-badge"></picture>
 </p>
 
-I've been building for the web since 2006: e-commerce at D&R, products at Doğuş Teknoloji, enterprise
-software at SabancıDx. Today I'm co-founder & CTPO of [Dipnot](https://dipnot.app), running its
+I've been building for the web since 2006: e-commerce at D&R, products at
+[Doğuş Teknoloji](https://github.com/dogusteknoloji), enterprise software at
+[SabancıDx](https://github.com/sabancidx). Today I'm co-founder & CTPO of [Dipnot](https://dipnot.app), running its
 technology end to end as a one-person engineering team with AI-assisted development.
 
 Underwater is the other half: I'm the only GUE instructor trainer in Türkiye, and my master's
 thesis at Akdeniz University classifies Mediterranean amphorae with computer vision.
 
 I love open source.
+
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./metrics/snake.dark.svg"><img alt="A snake eating the contribution graph of the last year" src="./metrics/snake.light.svg" width="100%"></picture>
+</p>
 
 ### Technologies & tools
 
@@ -34,9 +40,5 @@ I love open source.
 ### Stats & habits
 
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./metrics/stats.dark.svg"><img alt="GitHub stats: activity, community and repositories, private work included" src="./metrics/stats.light.svg" width="100%"></picture>
-</p>
-
-<p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="https://komarev.com/ghpvc/?username=nevcanuludas&label=profile%20views&color=01050a&style=flat-square"><img alt="Profile views" src="https://komarev.com/ghpvc/?username=nevcanuludas&label=profile%20views&color=0a8a7a&style=flat-square"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./metrics/stats.dark.svg"><img alt="GitHub stats: contributions, languages and when I code, private work included" src="./metrics/stats.light.svg" width="100%"></picture>
 </p>

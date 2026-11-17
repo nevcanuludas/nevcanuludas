@@ -1,7 +1,9 @@
-# Daily stats for the profile README, each in a dark and a light version (v6 colours):
-#   metrics/stats.{dark,light}.svg   lowlighter/metrics: activity, repositories, languages,
-#                                    contribution calendar and coding habits, private repos included
-#   metrics/snake.{dark,light}.svg   Platane/snk: the contribution graph eaten by a snake
+# Daily stats for the profile README, in a dark and a light version (v6 colours):
+#   metrics/stats.{dark,light}.svg   lowlighter/metrics: activity, community and repository
+#                                    counts, private repos included
+# GitHub's own contribution graph is on the profile already, so there is no calendar or snake.
+# To be replaced by our own script (scripts/make-stats.mjs), so the token never reaches a
+# third-party action.
 # Needs the METRICS_TOKEN secret: a classic token with repo, read:user and read:org.
 name: Metrics
 
@@ -43,27 +45,4 @@ jobs:
           base: header, activity, community, repositories
           repositories_affiliations: owner, collaborator, organization_member
           extras_css: ${{ matrix.css }}
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
           committer_message: 'Update stats (${{ matrix.theme }})'
-
-  snake:
-    needs: stats
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
-        with:
-          github_user_name: nevcanuludas
-          outputs: |
-            metrics/snake.dark.svg?palette=github-dark&color_snake=#6ff7e0&color_dots=#11161d,#0f3a36,#1b6b62,#3fb3a2,#6ff7e0
-            metrics/snake.light.svg?color_snake=#0a8a7a&color_dots=#eef2f5,#b8ece4,#6fd9c8,#2fb8a6,#0a8a7a
-      - name: Commit
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add metrics/snake.*.svg
-          git diff --cached --quiet && exit 0
-          git commit -m 'Update snake'
-          git pull --rebase
-          git push

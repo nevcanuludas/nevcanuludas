@@ -105,11 +105,7 @@ ${stackRows}
 ### Stats & habits
 
 <p align="center">
-  ${themed('./metrics/stats', 'GitHub stats: activity, repositories, languages, contribution calendar and coding habits')}
-</p>
-
-<p align="center">
-  ${themed('./metrics/snake', 'A snake eating the contribution graph of the last year')}
+  ${themed('./metrics/stats', 'GitHub stats: activity, community and repositories, private work included')}
 </p>
 
 <p align="center">

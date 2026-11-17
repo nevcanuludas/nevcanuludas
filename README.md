@@ -34,11 +34,7 @@ I love open source.
 ### Stats & habits
 
 <p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./metrics/stats.dark.svg"><img alt="GitHub stats: activity, repositories, languages, contribution calendar and coding habits" src="./metrics/stats.light.svg" width="100%"></picture>
-</p>
-
-<p align="center">
-  <picture><source media="(prefers-color-scheme: dark)" srcset="./metrics/snake.dark.svg"><img alt="A snake eating the contribution graph of the last year" src="./metrics/snake.light.svg" width="100%"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./metrics/stats.dark.svg"><img alt="GitHub stats: activity, community and repositories, private work included" src="./metrics/stats.light.svg" width="100%"></picture>
 </p>
 
 <p align="center">

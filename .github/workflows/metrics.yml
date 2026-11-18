@@ -1,4 +1,4 @@
-# Daily images for the profile README, each in a dark and a light version (v6 colours):
+# Daily images for the profile README, each in a dark and a light version (v8 colours):
 #   metrics/stats.{dark,light}.svg   scripts/make-stats.mjs (our own code): contributions, languages
 #                                    and when Nev codes, private work included
 #   metrics/snake.{dark,light}.svg   Platane/snk: the contribution graph eaten by a snake

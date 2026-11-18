@@ -1,8 +1,8 @@
-// Builds header.svg for the GitHub profile README: the NEV logo and roles on the left, the v6
+// Builds header.svg for the GitHub profile README: the NEV logo and roles on the left, the v8
 // point-cloud portrait on the right. The dots fly in from scattered positions and settle into the
 // face, then a few keep twinkling. No script: CSS animations only (GitHub shows it as an <img>).
-// Usage (from the repo root; the source is v6's point-cloud image, see CLAUDE.md):
-//   swift scripts/dump-rgba.swift ../v6.nevcan.com/public/media/nev-points.png points.rgba
+// Usage (from the repo root; the source is v8's point-cloud image, see CLAUDE.md):
+//   swift scripts/dump-rgba.swift ../v8.nevcan.com/public/media/nev-points.png points.rgba
 //   node scripts/make-header.mjs points.rgba 400 header.svg
 import fs from 'node:fs';
 
@@ -10,7 +10,7 @@ const [, , rgbaPath, sizeArg, out] = process.argv;
 const S = Number(sizeArg);
 const px = fs.readFileSync(rgbaPath);
 
-// same tuning as v6's PointCloud.astro, thinned a little to keep the file small
+// same tuning as v8's PointCloud.astro, thinned a little to keep the file small
 const DENSITY = [0.01, 0.42];
 const DENSITY_CURVE = 1.6;
 const CONTRAST = [0.06, 0.95];

@@ -1,10 +1,10 @@
-// Builds README.md for github.com/nevcanuludas. Badges come from shields.io in the v6 colours
+// Builds README.md for github.com/nevcanuludas. Badges come from shields.io in the v8 colours
 // (background #01050a, logo #6ff7e0). Run from anywhere; writes ../README.md.
 // `node scripts/make-readme.mjs --check` also fetches every badge and reports broken ones.
 import fs from 'node:fs';
 
 // Every badge comes in two versions and follows the viewer's GitHub theme (<picture>):
-// dark = the v6 colours, light = the same palette inverted, with a deeper teal that reads on white.
+// dark = the v8 colours, light = the same palette inverted, with a deeper teal that reads on white.
 const THEMES = {
   dark: { bg: '01050a', accent: '6ff7e0', ink: 'eef2f5' },
   light: { bg: 'eef2f5', accent: '0a8a7a', ink: '01050a' },

@@ -11,7 +11,7 @@ Both are generated. Change the script, then run it again:
 | ------------------------ | ----------------------------------------------- | ----------------------------------------------------------- |
 | `README.md`              | `node scripts/make-readme.mjs --check`          | links, stack and text inside the script                     |
 | `badges/*.svg`           | `node scripts/make-readme.mjs`                  | the open-source badge, drawn in shields' style            |
-| `header.svg`             | `scripts/dump-rgba.swift` + `make-header.mjs`   | `../v6.nevcan.com/public/media/nev-points.png` (see script) |
+| `header.svg`             | `scripts/dump-rgba.swift` + `make-header.mjs`   | `../v8.nevcan.com/public/media/nev-points.png` (see script) |
 | `metrics/stats.*.svg`    | `scripts/make-stats.mjs`, run daily by the workflow | GitHub API (needs the `METRICS_TOKEN` secret)           |
 | `metrics/snake.*.svg`    | Platane/snk in the same workflow                | public contribution graph                                   |
 
@@ -21,7 +21,7 @@ Both are generated. Change the script, then run it again:
 
 ## Rules
 
-- Colours are v6's: dark `#01050a` / `#6ff7e0`, light `#eef2f5` / `#0a8a7a`. Every badge and stats
+- Colours are from v8's first palette (www.nevcan.com has since moved to a #0b0f14 background): dark `#01050a` / `#6ff7e0`, light `#eef2f5` / `#0a8a7a`. Every badge and stats
   image has a dark and a light version, switched with `<picture>` and `prefers-color-scheme`.
 - The header card stays dark in both themes on purpose.
 - Badges with no Simple Icons logo (the N, LinkedIn, mail, Metashape) use small SVGs drawn in

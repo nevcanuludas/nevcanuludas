@@ -12,7 +12,7 @@
 
 I've been building for the web since 2006: e-commerce at D&R, products at
 [Doğuş Teknoloji](https://github.com/dogusteknoloji), enterprise software at
-[SabancıDx](https://github.com/sabancidx). Today I'm co-founder & CTPO of [Dipnot](https://dipnot.app), running its
+[SabancıDx](https://github.com/sabancidx). Today I'm technical co-founder of [Dipnot](https://dipnot.app), running its
 technology end to end as a one-person engineering team with AI-assisted development.
 
 Underwater is the other half: I'm the only GUE instructor trainer in Türkiye, and my master's
